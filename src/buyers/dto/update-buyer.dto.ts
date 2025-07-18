@@ -1,21 +1,24 @@
-import { IsString, IsNumber, IsOptional, IsArray } from 'class-validator';
+import { IsString, IsNumber, IsOptional, IsArray, IsEmail } from 'class-validator';
 
-export class CreateSellerDto {
+export class UpdateBuyerDto {
+  @IsOptional()
   @IsString()
-  id: string;
+  id?: string;
 
+  @IsOptional()
   @IsString()
-  shopName: string;
+  shopName?: string;
 
+  @IsOptional()
   @IsString()
-  ownerName: string;
+  ownerName?: string;
 
   @IsOptional()
   @IsString()
   phone?: string;
 
   @IsOptional()
-  @IsString()
+  @IsEmail()
   email?: string;
 
   @IsOptional()
@@ -42,8 +45,4 @@ export class CreateSellerDto {
   @IsArray()
   @IsString({ each: true })
   products?: string[];
-
-  @IsOptional()
-  @IsNumber()
-  rating?: number;
 } 

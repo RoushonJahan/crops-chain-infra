@@ -1,14 +1,16 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { BuyersService } from './buyers.service';
 import { Buyer } from './schemas/buyer.schema';
+import { CreateBuyerDto } from './dto/create-buyer.dto';
+import { UpdateBuyerDto } from './dto/update-buyer.dto';
 
 @Controller('buyers')
 export class BuyersController {
   constructor(private readonly buyersService: BuyersService) {}
 
   @Post()
-  async create(@Body() buyer: Buyer): Promise<Buyer> {
-    return this.buyersService.create(buyer);
+  async create(@Body() createBuyerDto: CreateBuyerDto): Promise<Buyer> {
+    return this.buyersService.create(createBuyerDto);
   }
 
   @Get()
@@ -22,8 +24,8 @@ export class BuyersController {
   }
 
   @Put(':id')
-  async update(@Param('id') id: string, @Body() buyer: Buyer): Promise<Buyer | null> {
-    return this.buyersService.update(id, buyer);
+  async update(@Param('id') id: string, @Body() updateBuyerDto: UpdateBuyerDto): Promise<Buyer | null> {
+    return this.buyersService.update(id, updateBuyerDto);
   }
 
   @Delete(':id')

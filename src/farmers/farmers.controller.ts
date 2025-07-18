@@ -1,14 +1,16 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { FarmersService } from './farmers.service';
 import { Farmer } from './schemas/farmer.schema';
+import { CreateFarmerDto } from './dto/create-farmer.dto';
+import { UpdateFarmerDto } from './dto/update-farmer.dto';
 
 @Controller('farmers')
 export class FarmersController {
   constructor(private readonly farmersService: FarmersService) {}
 
   @Post()
-  async create(@Body() farmer: Farmer): Promise<Farmer> {
-    return this.farmersService.create(farmer);
+  async create(@Body() createFarmerDto: CreateFarmerDto): Promise<Farmer> {
+    return this.farmersService.create(createFarmerDto);
   }
 
   @Get()
@@ -22,8 +24,8 @@ export class FarmersController {
   }
 
   @Put(':id')
-  async update(@Param('id') id: string, @Body() farmer: Farmer): Promise<Farmer | null> {
-    return this.farmersService.update(id, farmer);
+  async update(@Param('id') id: string, @Body() updateFarmerDto: UpdateFarmerDto): Promise<Farmer | null> {
+    return this.farmersService.update(id, updateFarmerDto);
   }
 
   @Delete(':id')
