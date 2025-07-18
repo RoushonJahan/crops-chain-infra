@@ -5,14 +5,20 @@ export type PurchaseHistoryDocument = PurchaseHistory & Document;
 
 @Schema()
 export class PurchaseHistory {
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   id: string;
 
   @Prop({ required: true })
-  buyerId: string;
+  sellerShopName: string;
 
   @Prop({ required: true })
-  productId: string;
+  sellerName: string;
+
+  @Prop({ required: true })
+  shopAddress: string;
+
+  @Prop({ required: true })
+  item: string;
 
   @Prop({ required: true })
   quantity: number;
@@ -21,7 +27,22 @@ export class PurchaseHistory {
   totalPrice: number;
 
   @Prop({ required: true })
-  purchaseDate: Date;
+  buyerName: string;
+
+  @Prop({ required: true })
+  transportationName: string;
+
+  @Prop({ required: true })
+  destinationAddress: string;
+
+  @Prop({ required: true })
+  transactionType: string;
+
+  @Prop({ required: true })
+  deliveryDate: string;
+
+  @Prop({ required: true })
+  deliveryTime: string;
 }
 
 export const PurchaseHistorySchema = SchemaFactory.createForClass(PurchaseHistory);

@@ -14,7 +14,7 @@ export class SellersService {
   }
 
   async findOne(id: string): Promise<Seller | null> {
-    return this.sellerModel.findById(id).exec();
+    return this.sellerModel.findOne({ id }).exec();
   }
 
   async create(seller: Seller): Promise<Seller> {

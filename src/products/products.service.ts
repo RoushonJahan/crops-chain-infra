@@ -14,7 +14,7 @@ export class ProductsService {
   }
 
   async findOne(id: string): Promise<Product | null> {
-    return this.productModel.findById(id).exec();
+    return this.productModel.findOne({ id }).exec();
   }
 
   async create(product: Product): Promise<Product> {

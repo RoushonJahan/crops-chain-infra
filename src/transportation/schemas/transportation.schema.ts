@@ -5,7 +5,7 @@ export type TransportationDocument = Transportation & Document;
 
 @Schema()
 export class Transportation {
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   id: string;
 
   @Prop({ required: true })

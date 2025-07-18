@@ -5,7 +5,7 @@ export type OrderDocument = Order & Document;
 
 @Schema()
 export class Order {
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   id: string;
 
   @Prop({ required: true })
