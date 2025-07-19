@@ -18,27 +18,7 @@ export class UpdateBuyerDto {
   phone?: string;
 
   @IsOptional()
-  @IsEmail()
-  email?: string;
-
-  @IsOptional()
   @IsString()
   location?: string;
 
-  @IsOptional()
-  @IsString()
-  transactionType?: string;
-
-  @IsOptional()
-  @IsNumber()
-  totalOrders?: number;
-
-  @IsOptional()
-  @IsString()
-  joinDate?: string;
-
-  @IsOptional()
-  @IsArray()
-  @IsString({ each: true })
-  products?: string[];
 } 

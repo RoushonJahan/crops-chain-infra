@@ -15,23 +15,10 @@ export class Product {
   @Prop({ required: true })
   quantity: number;
 
+  @Prop({ required: true })
   @Prop()
-  shopName: string;
+  shopId: string;
 
-  @Prop()
-  location: string;
-
-  @Prop()
-  status: string;
-
-  @Prop()
-  description: string;
-
-  @Prop()
-  farmDetails: string;
-
-  @Prop()
-  harvestDate: string;
 }
 
 export type ProductDocument = Product & Document;

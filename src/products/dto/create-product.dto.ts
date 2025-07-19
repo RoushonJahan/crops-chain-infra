@@ -13,27 +13,7 @@ export class CreateProductDto {
   @IsNumber()
   quantity: number;
 
-  @IsOptional()
   @IsString()
-  shopName?: string;
+  shopId?: string;
 
-  @IsOptional()
-  @IsString()
-  location?: string;
-
-  @IsOptional()
-  @IsString()
-  status?: string;
-
-  @IsOptional()
-  @IsString()
-  description?: string;
-
-  @IsOptional()
-  @IsString()
-  farmDetails?: string;
-
-  @IsOptional()
-  @IsString()
-  harvestDate?: string;
 } 

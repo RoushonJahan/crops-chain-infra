@@ -24,13 +24,21 @@ export class Order {
   totalPrice: number;
 
   @Prop({ required: true })
-  location: string;
+  productId: string;
+
 
   @Prop({ required: true })
-  estimatedDelivery: string;
+  sellerShopId: string;
 
   @Prop({ required: true })
-  trackingId: string;
+  buyerShopId: string;
+
+  @Prop({ required: true })
+  transportId: string;
+
+  @Prop({ required: true })
+  transationId: string;
+
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

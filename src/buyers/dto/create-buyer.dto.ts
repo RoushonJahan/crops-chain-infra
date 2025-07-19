@@ -13,24 +13,7 @@ export class CreateBuyerDto {
   @IsString()
   phone: string;
 
-  @IsEmail()
-  email: string;
-
   @IsString()
   location: string;
 
-  @IsString()
-  transactionType: string;
-
-  @IsOptional()
-  @IsNumber()
-  totalOrders?: number;
-
-  @IsString()
-  joinDate: string;
-
-  @IsOptional()
-  @IsArray()
-  @IsString({ each: true })
-  products?: string[];
 } 

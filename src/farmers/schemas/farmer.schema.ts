@@ -18,25 +18,11 @@ export class Farmer {
   phone: string;
 
   @Prop({ required: true })
-  email: string;
-
-  @Prop({ required: true })
   transactionType: string;
 
   @Prop({ required: true })
   location: string;
 
-  @Prop({ type: [String], required: true, default: [] })
-  products: string[];
-
-  @Prop({ required: true, default: 0 })
-  rating: number;
-
-  @Prop({ required: true, default: 0 })
-  totalOrders: number;
-
-  @Prop({ required: true })
-  joinDate: string;
 }
 
 export const FarmerSchema = SchemaFactory.createForClass(Farmer);

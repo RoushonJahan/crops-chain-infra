@@ -18,10 +18,6 @@ export class UpdateFarmerDto {
   phone?: string;
 
   @IsOptional()
-  @IsEmail()
-  email?: string;
-
-  @IsOptional()
   @IsString()
   transactionType?: string;
 
@@ -29,20 +25,4 @@ export class UpdateFarmerDto {
   @IsString()
   location?: string;
 
-  @IsOptional()
-  @IsArray()
-  @IsString({ each: true })
-  products?: string[];
-
-  @IsOptional()
-  @IsNumber()
-  rating?: number;
-
-  @IsOptional()
-  @IsNumber()
-  totalOrders?: number;
-
-  @IsOptional()
-  @IsString()
-  joinDate?: string;
 } 

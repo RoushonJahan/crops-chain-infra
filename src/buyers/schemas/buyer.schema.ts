@@ -18,23 +18,8 @@ export class Buyer {
   phone: string;
 
   @Prop({ required: true })
-  email: string;
-
-  @Prop({ required: true })
   location: string;
 
-  @Prop({ required: true })
-  transactionType: string;
-
-
-  @Prop({ required: true, default: 0 })
-  totalOrders: number;
-
-  @Prop({ required: true })
-  joinDate: string;
-
-  @Prop({ type: [String], required: true, default: [] })
-  products: string[];
 }
 
 export const BuyerSchema = SchemaFactory.createForClass(Buyer);
