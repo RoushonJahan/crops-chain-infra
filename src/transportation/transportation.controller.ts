@@ -10,9 +10,8 @@ export class TransportationController {
   async create(@Body() transportation: Transportation): Promise<Transportation> {
     return this.transportationService.create(transportation);
   }
-
   @Get()
-  async findAll(): Promise<Transportation[]> {
+  async findAll(): Promise<any[]> {
     return this.transportationService.findAll();
   }
 

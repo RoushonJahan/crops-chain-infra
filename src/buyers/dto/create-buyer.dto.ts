@@ -22,9 +22,6 @@ export class CreateBuyerDto {
   @IsString()
   transactionType: string;
 
-  @IsString()
-  transactionId: string;
-
   @IsOptional()
   @IsNumber()
   totalOrders?: number;

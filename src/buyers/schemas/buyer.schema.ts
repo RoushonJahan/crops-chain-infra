@@ -26,8 +26,6 @@ export class Buyer {
   @Prop({ required: true })
   transactionType: string;
 
-  @Prop({ required: true })
-  transactionId: string;
 
   @Prop({ required: true, default: 0 })
   totalOrders: number;

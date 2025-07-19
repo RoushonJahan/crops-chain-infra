@@ -30,10 +30,6 @@ export class UpdateBuyerDto {
   transactionType?: string;
 
   @IsOptional()
-  @IsString()
-  transactionId?: string;
-
-  @IsOptional()
   @IsNumber()
   totalOrders?: number;
 
