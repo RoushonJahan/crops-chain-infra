@@ -25,6 +25,20 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Environment Setup
+
+Before running the project, you need to set up your environment variables:
+
+1. Copy the example environment file:
+```bash
+cp env.example .env
+```
+
+2. Update the `.env` file with your actual MongoDB connection string:
+```
+MONGODB_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/
+```
+
 ## Project setup
 
 ```bash

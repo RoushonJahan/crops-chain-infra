@@ -9,10 +9,11 @@ import { FarmersModule } from './farmers/farmers.module';
 import { PurchaseHistoryModule } from './purchase-history/purchase-history.module';
 import { TrackOrdersModule } from './track-orders/track-orders.module';
 import { TransportationModule } from './transportation/transportation.module';
+import { databaseConfig } from './config/database.config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://mongoadmin:mongoadmin@192.168.52.212:27017/'),
+    MongooseModule.forRoot(databaseConfig.uri),
     ProductsModule,
     OrdersModule,
     BuyersModule,
