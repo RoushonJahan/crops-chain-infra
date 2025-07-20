@@ -16,8 +16,10 @@ export class Product {
   quantity: number;
 
   @Prop({ required: true })
-  @Prop()
   shopId: string;
+
+  @Prop({ required: true })
+  harvestDate: string;
 
 }
 
