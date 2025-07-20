@@ -55,19 +55,20 @@ export class AuthService {
     if (role === UserRole.FARMER) {
       const farmer = new this.farmerModel({
         id: userData.phone,
-        name: userData.name,
+        shopName: userData.shopName,
+        ownerName: userData.ownerName,
         phone: userData.phone,
-        email: userData.email,
+        transactionType: userData.transactionType,
         location: userData.location,
-        farmName: userData.shopName,
       });
       await farmer.save();
     } else if (role === UserRole.BUYER) {
       const buyer = new this.buyerModel({
         id: userData.phone,
-        name: userData.name,
+        shopName: userData.shopName,
+        ownerName: userData.ownerName,
         phone: userData.phone,
-        email: userData.email,
+        transactionType: userData.transactionType,
         location: userData.location,
       });
       await buyer.save();
@@ -84,11 +85,11 @@ export class AuthService {
     const { phone, password } = loginDto;
 
     // Check for admin login
-    if (phone === 'admin' && password === 'admin') {
+    if (phone === '01500000000' && password === 'admin') {
       const adminToken = jwt.sign(
         { 
           id: 'admin',
-          phone: 'admin',
+          phone: '01500000000',
           role: UserRole.ADMIN 
         },
         process.env.JWT_SECRET || 'your-secret-key',
@@ -100,7 +101,7 @@ export class AuthService {
         token: adminToken,
         user: {
           id: 'admin',
-          phone: 'admin',
+          phone: '01500000000',
           role: UserRole.ADMIN,
           name: 'Admin'
         }
