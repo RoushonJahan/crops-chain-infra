@@ -24,8 +24,10 @@ export class Order {
   totalPrice: number;
 
   @Prop({ required: true })
-  productId: string;
+  location: string;
 
+  @Prop({ required: true })
+  productId: string;
 
   @Prop({ required: true })
   sellerShopId: string;

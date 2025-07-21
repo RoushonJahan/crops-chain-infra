@@ -32,9 +32,6 @@ export class Transportation {
   @Prop({ required: true })
   contact: string;
 
-  @Prop({ required: true })
-  email: string;
-
   @Prop([String])
   features: string[];
 }

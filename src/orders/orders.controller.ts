@@ -6,6 +6,11 @@ import { Order } from './schemas/order.schema';
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
+  @Post()
+  async create(@Body() order: Order): Promise<Order> {
+    return this.ordersService.create(order);
+  }
+
   @Get()
   async findAll(): Promise<Order[]> {
     return this.ordersService.findAll();
