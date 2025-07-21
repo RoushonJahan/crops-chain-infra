@@ -1,4 +1,4 @@
-import { IsString, IsEmail, IsEnum, MinLength } from 'class-validator';
+import { IsString, IsEnum, MinLength } from 'class-validator';
 import { UserRole } from '../schemas/user.schema';
 
 export class SignupDto {
@@ -7,9 +7,6 @@ export class SignupDto {
 
   @IsString()
   phone: string;
-
-  @IsEmail()
-  email: string;
 
   @IsString()
   @MinLength(6)

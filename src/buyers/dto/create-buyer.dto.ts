@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsOptional, IsArray, IsEmail } from 'class-validator';
+import { IsString, IsNumber, IsOptional, IsArray } from 'class-validator';
 
 export class CreateBuyerDto {
   @IsString()
